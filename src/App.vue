@@ -1,7 +1,7 @@
 <template >
   <div class="container pt-5  mx-auto items-center gap-10 flex-col flex ">
-  <HeaderItem />
-  <CardList />
+  <HeaderItem @searchInput="handleSearchInput" />
+  <CardList :result="robotSearch"/>
   </div>
 </template>
 
@@ -14,7 +14,19 @@ export default {
   components: {
     HeaderItem,
     CardList
-  }
+  },
+  data()
+{
+   return{
+     robotSearch:''
+         }
+},
+methods: {
+ handleSearchInput(e)
+    {
+      this.robotSearch=e;
+    },
+}
 }
 </script>
 

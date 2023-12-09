@@ -1,13 +1,24 @@
 <template >
   <h1 class="text-7xl  font-bold">
-  All Robots
+  All Robots  
   </h1>
-  <input  v-model="message" class="bg-neutral-300 px-3 py-2" type='search'  placeholder='search robots' />
+  <input class="bg-neutral-300 px-3 py-2" v-model="searchText" type="text"  placeholder='search robots' @input='emitHandel()' />
 </template>
 
 <script>
 export default {
-  
+     name:"HeaderItem",
+  data() {
+    return {
+      searchText: ''
+    }
+  },
+  methods: {
+emitHandel()
+    {
+      this.$emit('searchInput',this.searchText)
+    }
+  }
 }
 </script>
 
