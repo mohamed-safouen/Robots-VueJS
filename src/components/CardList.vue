@@ -1,6 +1,6 @@
 <template>
     <div class="mt-6 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-4">
-          <div v-for="robo in filteredRobots" :key="robo.name" class="group relative bg-white relative w-full overflow-hidden rounded-lg p-2">
+          <div v-for="robo in filteredRobots" :key="robo.id" class="group relative bg-white relative w-full overflow-hidden rounded-lg p-2">
             <div class=" sm:aspect-h-1 sm:aspect-w-2 h-80 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75">
               <img :src="`https://robohash.org/${robo.id}`" :alt="robo.name" class="h-full w-full object-cover object-center" />
             </div>
@@ -18,7 +18,6 @@ export default {
     name:"CardList",
     props: {
     result: {
-      type: String, 
       default: '' 
     }},
     data(){ return {
